@@ -1,0 +1,209 @@
+/* Import font từ Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+/* Thiết lập các giá trị mặc định cho tất cả các phần tử */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-size: small;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: #0782c1;
+}
+
+label {
+  display: block;
+  margin: 5px 0;
+  font-weight: bold;
+}
+
+.text-title {
+  border-left: 5px solid #0782c1;
+  padding-left: 5px;
+}
+
+li {
+  list-style: none;
+}
+
+ul {
+  padding: 0;
+}
+
+/* Thiết lập cho thanh bên và các mục trong thanh bên */
+#sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 230px;
+  height: 100%;
+  z-index: 10;
+  transition: 0.3s ease;
+  overflow-x: hidden;
+  scrollbar-width: none;
+}
+
+#sidebar.hide {
+  width: 60px;
+}
+
+/* Thiết lập cho logo trong thanh bên */
+.sidebar-logo {
+  height: 56px;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  box-sizing: content-box;
+  padding: 10px;
+  justify-content: space-between;
+}
+
+#sidebar.hide > .sidebar-logo {
+  justify-content: center;
+}
+
+#sidebar .sidebar-logo .col-logo img {
+  width: 100%;
+}
+
+#sidebar .sidebar-logo .col-menu .bx {
+  font-size: 2rem;
+}
+
+#sidebar .sidebar-logo .col-menu .bx:hover {
+  font-weight: bold;
+  color: #0782c1;
+  cursor: pointer;
+}
+
+#sidebar.hide > .sidebar-logo > .col-logo {
+  display: none;
+}
+
+#sidebar .side-menu li {
+  height: 48px;
+  background: transparent;
+  margin-left: 10px;
+  padding: 0;
+}
+
+#sidebar .side-menu li.active {
+  position: relative;
+}
+
+#sidebar .side-menu li a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 16px;
+  white-space: nowrap;
+  overflow-x: hidden;
+  color: black;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+#sidebar.hide .side-menu li a {
+  width: calc(48px - (4px * 2));
+  transition: width 0.3s ease;
+  -webkit-transition: width 0.3s ease;
+  -moz-transition: width 0.3s ease;
+  -ms-transition: width 0.3s ease;
+  -o-transition: width 0.3s ease;
+}
+
+#sidebar .side-menu li a .bx {
+  font-size: 1.5rem;
+}
+
+#sidebar .side-menu li a.logout {
+  color: red;
+}
+
+#sidebar .side-menu li.active a {
+  color: #0782c1;
+}
+
+ul.side-menu.top:hover {
+  position: fixed;
+}
+#sidebar .side-menu.top li a:hover {
+  color: #0782c1;
+  font-weight: bold;
+  width: 200px;
+  z-index: 20;
+  background: #ffffff;
+}
+
+#sidebar.hide .side-menu.top li a:hover {
+  color: #0782c1;
+  font-weight: bold;
+  width: 200px;
+  z-index: 20;
+  background: #ffffff;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+#sidebar .side-menu li a .bx {
+  min-width: calc(60px - ((4px + 6px) * 2));
+  display: flex;
+  justify-content: center;
+}
+
+/* Thiết lập cho nội dung chính */
+#main-container {
+  position: relative;
+  width: calc(100% - 230px);
+  left: 200px;
+  transition: 0.3s ease;
+  padding: 0 20px;
+  margin: 20px;
+}
+
+#sidebar.hide ~ #main-container {
+  width: calc(100% - 40px);
+  left: 30px;
+}
+
+.active {
+  font-weight: bold;
+}
+.breadcrumb li a {
+  color: #0782c1 !important;
+}
+.main-title {
+  padding: 0 10px;
+  border-left: 5px solid tomato;
+}
+.sidebar,
+.main-data,
+.main-form {
+  background: #f8f9fa;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+@media (max-width: 991px) {
+}
+@media (max-width: 575px) {
+}
